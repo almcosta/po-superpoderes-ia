@@ -381,9 +381,9 @@ details p{color:var(--mut);padding:0 2px 20px;font-size:.96rem;max-width:70ch}
     if(!hasUtm){ u.searchParams.set('utm_source','landing'); u.searchParams.set('utm_medium','site'); u.searchParams.set('utm_campaign','po-ia'); }
     a.href=u.toString();
   });
-  // 2) Aviso de cupom, apenas enquanto a oferta HotMilk estiver valendo (ate 07/11/2026)
+  // 2) Aviso de cupom: aparece so para quem chega por um link com o cupom (d). Encerre o codigo no Sympla para parar o desconto.
   var annc=document.querySelector('.annc .wrap');
-  if(has.d && annc && new Date() < new Date(2026,10,8)){
+  if(has.d && annc){
     annc.textContent='Cupom HotMilk ativo · 10% de desconto no seu ingresso, aplicado ao abrir o Sympla';
   }
   // 3) Contagem do lote: some quando a data passa, em vez de declarar o lote encerrado
